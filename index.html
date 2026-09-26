@@ -3,10 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; img-src 'self' data:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; media-src 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <title>Ассамблея — среда для творцов и предпринимателей</title>
   <meta name="description" content="Ассамблея — точка встречи искусства, бизнеса и людей, которые создают новое и влияют на общество.">
+  <link rel="canonical" href="https://maksimkuva.github.io/assembly-art-union/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ассамблея">
+  <meta property="og:title" content="Ассамблея — среда для творцов и предпринимателей">
+  <meta property="og:description" content="Точка встречи искусства, бизнеса и людей, которые создают новое.">
+  <meta property="og:url" content="https://maksimkuva.github.io/assembly-art-union/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ассамблея — среда для творцов и предпринимателей">
+  <meta name="twitter:description" content="Точка встречи искусства, бизнеса и людей, которые создают новое.">
   <meta name="theme-color" content="#f4f0e9">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080808'/%3E%3Cpath d='M7 24 15.8 7 25 24h-5l-1.4-3H13l-1.4 3H7Zm7.7-7h2.2l-1.1-2.8-1.1 2.8Z' fill='%23f12c35'/%3E%3C/svg%3E">
+  <script src="attribution.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Ассамблея","alternateName":"Ассамблея · проект Art Union","url":"https://maksimkuva.github.io/assembly-art-union/","inLanguage":"ru-RU","publisher":{"@type":"Organization","name":"Art Union","email":"artunion.promo.team@gmail.com","founder":{"@type":"Person","name":"Анастасия Селезнева"},"sameAs":["https://t.me/AnastasiyaSeleznevaV"]}}</script>
   <style>
     @font-face{font-family:Assembly;src:url('assets/Assembly-Regular.ttf') format('truetype');font-display:swap;font-weight:400}
     @font-face{font-family:Assembly;src:url('assets/Assembly-Bold.ttf') format('truetype');font-display:swap;font-weight:700}
@@ -92,6 +107,18 @@
         <aside class="dialog-aside" aria-hidden="true"><div><strong>Ваш запрос — начало разговора.</strong><p>Ответы останутся в форме до закрытия окна. Сейчас это режим предпросмотра.</p></div><div class="dialog-index" id="dialog-index">01</div></aside>
         <form class="application-form" id="guest-form" novalidate>
           <input type="hidden" name="application_type" id="application-type" value="participant">
+          <input type="hidden" name="utm_source" data-attribution>
+          <input type="hidden" name="utm_medium" data-attribution>
+          <input type="hidden" name="utm_campaign" data-attribution>
+          <input type="hidden" name="utm_content" data-attribution>
+          <input type="hidden" name="utm_term" data-attribution>
+          <input type="hidden" name="yclid" data-attribution>
+          <input type="hidden" name="gclid" data-attribution>
+          <input type="hidden" name="fbclid" data-attribution>
+          <input type="hidden" name="vk_click_id" data-attribution>
+          <input type="hidden" name="attribution_landing_path" data-attribution>
+          <input type="hidden" name="attribution_referrer_origin" data-attribution>
+          <input type="hidden" name="attribution_captured_at" data-attribution>
           <fieldset class="step active" data-step="1"><legend>Как к вам обращаться?</legend><div class="field-grid"><label class="field"><span>ФИО / имя в сообществе *</span><input type="text" name="name" required autocomplete="name"></label><label class="field"><span>Род деятельности / профессия *</span><input type="text" name="occupation" required></label><label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel"></label><label class="field"><span>Email *</span><input type="email" name="email" required autocomplete="email"></label><label class="field wide"><span>Сайт или социальная сеть</span><input type="url" name="link" placeholder="https://"></label></div></fieldset>
           <fieldset class="step" data-step="2"><legend>Кого или что вы хотите найти?</legend><span class="group-label">Можно выбрать несколько вариантов</span><div class="choices" role="group" aria-label="Тип запроса"><label class="choice"><input type="checkbox" name="request" value="collaboration"><span>Коллаборацию / совместный проект</span></label><label class="choice"><input type="checkbox" name="request" value="partnership"><span>Партнёрство</span></label><label class="choice"><input type="checkbox" name="request" value="specialist"><span>Специалиста / подрядчика</span></label><label class="choice"><input type="checkbox" name="request" value="team"><span>Единомышленника / команду</span></label><label class="choice"><input type="checkbox" name="request" value="mentor"><span>Наставника / консультанта</span></label></div><label class="field free"><span>Сформулируйте свой запрос своими словами</span><textarea name="request_details" placeholder="Например: ищу партнёра для запуска проекта или эксперта в конкретной сфере"></textarea></label></fieldset>
           <fieldset class="step" data-step="3"><legend>Что вам сейчас особенно интересно?</legend><span class="group-label">Можно выбрать несколько сфер</span><div class="choices" role="group" aria-label="Интересующие сферы"><label class="choice"><input type="checkbox" name="interest" value="art"><span>Искусство</span></label><label class="choice"><input type="checkbox" name="interest" value="business"><span>Бизнес-партнёрства</span></label><label class="choice"><input type="checkbox" name="interest" value="fashion"><span>Мода</span></label><label class="choice"><input type="checkbox" name="interest" value="music"><span>Музыка</span></label><label class="choice"><input type="checkbox" name="interest" value="tech"><span>ИИ и IT-технологии</span></label><label class="choice"><input type="checkbox" name="interest" value="investment"><span>Инвестиции и капитал</span></label><label class="choice"><input type="checkbox" name="interest" value="wellness"><span>Красота и здоровье</span></label></div><label class="field free"><span>Другое направление — своими словами</span><input type="text" name="interest_other"></label></fieldset>
@@ -127,7 +154,8 @@
     function validateCurrentStep(){const required=[...steps[currentStep].querySelectorAll('[required]')];const invalid=required.find(field=>!field.checkValidity());if(invalid){error.textContent='Пожалуйста, заполните обязательные поля этого шага.';invalid.reportValidity();invalid.focus();return false}return true}
     function openForm(mode='participant'){formMode=mode==='guest'?'guest':'participant';applicationType.value=formMode;if(typeof dialog.showModal==='function') dialog.showModal();else dialog.setAttribute('open','');document.body.classList.add('dialog-open');renderStep()}
     function closeForm(){if(dialog.open) dialog.close();document.body.classList.remove('dialog-open')}
-    function resetForm(){form.reset();currentStep=0;formView.hidden=false;successView.classList.remove('show');renderStep()}
+    function applyAttribution(){const attribution=window.AssemblyAttribution||{};form.querySelectorAll('[data-attribution]').forEach(field=>{field.value=attribution[field.name]||''})}
+    function resetForm(){form.reset();applyAttribution();currentStep=0;formView.hidden=false;successView.classList.remove('show');renderStep()}
     document.querySelectorAll('[data-open-form]').forEach(button=>button.addEventListener('click',()=>openForm(button.dataset.openForm)));
     document.querySelectorAll('[data-close-form]').forEach(button=>button.addEventListener('click',closeForm));
     dialog.addEventListener('cancel',()=>document.body.classList.remove('dialog-open'));
