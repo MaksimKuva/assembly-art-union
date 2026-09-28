@@ -1,0 +1,50 @@
+body.dialog-open{overflow:hidden}
+.application-dialog{border:0;padding:0;background:transparent;color:inherit;width:min(1040px,calc(100% - 36px));max-height:calc(100svh - 36px);overflow:visible}
+.application-dialog::backdrop{background:rgba(5,5,5,.82);backdrop-filter:blur(8px)}
+.application-dialog .dialog-card{background:var(--paper,#f4f0e9);max-height:calc(100svh - 36px);overflow:auto;box-shadow:0 26px 80px rgba(0,0,0,.42)}
+.application-dialog .dialog-head{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 24px;background:rgba(244,240,233,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line,#cbc4ba)}
+.application-dialog .dialog-progress{min-width:0;font-size:.73rem;text-transform:uppercase;letter-spacing:.11em;color:var(--muted,#666058)}
+.application-dialog .dialog-progress b{color:var(--red,#f12c35)}
+.application-dialog .dialog-close{width:42px;height:42px;flex:0 0 42px;border-radius:50%;border:1px solid var(--line,#cbc4ba);background:transparent;font:inherit;font-size:1.55rem;line-height:1;display:grid;place-items:center;cursor:pointer}
+.application-dialog .dialog-body{display:grid;grid-template-columns:290px 1fr;min-height:610px}
+.application-dialog .dialog-aside{background:var(--ink,#0b0b0b);color:var(--paper,#f4f0e9);padding:38px 30px;display:flex;flex-direction:column;justify-content:space-between}
+.application-dialog .dialog-aside strong{font-size:2rem;line-height:.95;letter-spacing:-.04em}
+.application-dialog .dialog-aside p{font-size:.88rem;color:rgba(255,255,255,.62);margin:28px 0 0}
+.application-dialog .dialog-index{font-size:clamp(4.2rem,8vw,7.5rem);line-height:.75;color:var(--red,#f12c35);letter-spacing:-.07em}
+.application-dialog .application-form{padding:clamp(32px,5vw,62px);display:flex;flex-direction:column;min-width:0}
+.application-dialog .step{display:none;border:0;padding:0;margin:0;min-width:0}
+.application-dialog .step.active{display:block}
+.application-dialog .step legend{font-size:clamp(2rem,4vw,4rem);line-height:.9;letter-spacing:-.05em;font-weight:700;margin-bottom:38px;max-width:690px}
+.application-dialog .event-selector{padding:20px;border:1px solid var(--line,#cbc4ba);background:var(--paper-2,#ebe5dc);margin:0 0 30px}
+.application-dialog .event-selector>span{display:block;color:var(--red,#f12c35);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.application-dialog .event-selector select{width:100%;min-height:52px;border:0;border-bottom:1px solid #918b83;border-radius:0;background:transparent;color:var(--ink,#0b0b0b);font:inherit;font-weight:700;padding:8px 34px 8px 0}
+.application-dialog .event-selector small{display:block;color:var(--muted,#666058);margin-top:10px;overflow-wrap:anywhere}
+.application-dialog .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.application-dialog .field{display:block}.application-dialog .field.wide{grid-column:1/-1}
+.application-dialog .field span,.application-dialog .group-label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#666058);margin-bottom:8px}
+.application-dialog input[type=text],.application-dialog input[type=email],.application-dialog input[type=tel],.application-dialog input[type=url],.application-dialog textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #918b83;border-radius:0;padding:10px 0;color:var(--ink,#0b0b0b);outline:none;min-height:48px;font:inherit}
+.application-dialog textarea{min-height:94px;resize:vertical}
+.application-dialog input:focus,.application-dialog textarea:focus,.application-dialog select:focus{border-color:var(--red,#f12c35);box-shadow:0 2px 0 var(--red,#f12c35);outline:none}
+.application-dialog .choices{display:flex;flex-wrap:wrap;gap:10px}
+.application-dialog .choice{position:relative}.application-dialog .choice input{position:absolute;opacity:0;pointer-events:none}
+.application-dialog .choice span{display:block;border:1px solid #aaa39a;border-radius:999px;padding:11px 16px;font-size:.87rem;transition:.2s;background:transparent}
+.application-dialog .choice input:checked+span{background:var(--ink,#0b0b0b);border-color:var(--ink,#0b0b0b);color:var(--paper,#f4f0e9)}
+.application-dialog .choice input:focus-visible+span{outline:3px solid rgba(241,44,53,.28);outline-offset:2px}
+.application-dialog .free{margin-top:25px}
+.application-dialog .consent{display:flex;gap:12px;align-items:flex-start;color:var(--muted,#666058);font-size:.85rem;margin:28px 0 0}
+.application-dialog .consent input{margin-top:4px;accent-color:var(--red,#f12c35);width:18px;height:18px;flex:0 0 auto}
+.application-dialog .consent a{text-decoration:underline;text-underline-offset:3px;color:var(--ink,#0b0b0b)}
+.application-dialog .form-error{min-height:24px;color:#b51620;font-size:.82rem;margin:22px 0 0}
+.application-dialog .dialog-actions{margin-top:auto;padding-top:30px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.application-dialog .button{border:0;cursor:pointer;font:inherit;border-radius:999px;display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:48px;padding:0 20px;background:var(--red,#f12c35);color:var(--ink,#0b0b0b);font-weight:700;text-decoration:none}
+.application-dialog .button.ghost{background:transparent;border:1px solid #aaa39a}
+.application-dialog .button.dark{background:var(--ink,#0b0b0b);color:var(--paper,#f4f0e9)}
+.application-dialog .preview-note{font-size:.78rem;color:var(--muted,#666058);max-width:520px;margin:24px 0 0}
+.application-dialog .dialog-success{display:none;padding:48px clamp(26px,5vw,64px);align-content:center;min-height:480px}
+.application-dialog .dialog-success.show{display:grid}
+.application-dialog .dialog-success h2{font-size:clamp(2.8rem,6vw,6rem);line-height:.88;letter-spacing:-.06em;margin:20px 0 26px}
+.application-dialog .dialog-success p{max-width:620px;color:var(--muted,#666058)}
+.application-dialog .dialog-success .button{margin-top:18px;width:max-content}
+@media(max-width:980px){.application-dialog .dialog-body{grid-template-columns:220px 1fr}}
+@media(max-width:700px){.application-dialog .dialog-body{display:block;min-height:0}.application-dialog .dialog-aside{display:none}.application-dialog .application-form{min-height:calc(100svh - 106px);padding:32px 22px}.application-dialog .field-grid{grid-template-columns:1fr}.application-dialog .field.wide{grid-column:auto}.application-dialog .step legend{margin-bottom:28px}.application-dialog .dialog-actions{padding-top:26px}.application-dialog .dialog-actions .button{min-width:0}.application-dialog .dialog-progress{max-width:240px}.application-dialog .dialog-success{min-height:calc(100svh - 106px)}}
+@media(max-width:460px){.application-dialog{width:calc(100% - 20px);max-width:calc(100% - 20px);max-height:calc(100svh - 20px);margin:auto}.application-dialog .dialog-card{width:100%;max-height:calc(100svh - 20px);min-height:calc(100svh - 20px);overflow-x:hidden}.application-dialog .dialog-head{gap:12px;padding:14px 18px}.application-dialog .dialog-progress{flex:1;max-width:none}.application-dialog .application-form{min-height:calc(100svh - 90px)}.application-dialog .event-selector select{font-size:1rem}.application-dialog .dialog-actions{align-items:stretch;flex-direction:column-reverse}.application-dialog .dialog-actions .button{width:100%}}
