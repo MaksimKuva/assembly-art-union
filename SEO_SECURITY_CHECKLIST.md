@@ -23,11 +23,20 @@
 | QR-код события | offline | qr | assembly_event | spot |
 | Платная реклама | площадка | cpc | название_кампании | объявление |
 
-Шаблон до подключения домена:
+Шаблон ссылки после подключения домена:
 
-`https://maksimkuva.github.io/assembly-art-union/?utm_source=telegram&utm_medium=messenger&utm_campaign=assembly_launch&utm_content=anastasia`
+`https://assembly-art-union.ru/?utm_source=telegram&utm_medium=messenger&utm_campaign=assembly_launch&utm_content=anastasia`
 
-После подключения домена базовый адрес во всех размеченных ссылках, canonical, robots и sitemap нужно заменить на постоянный домен.
+Постоянный домен уже используется в canonical, `robots.txt` и `sitemap.xml`.
+
+## Продакшен: 29 сентября 2026
+
+- Домен `assembly-art-union.ru` и `www` направлены на VPS `157.22.173.22`.
+- Let's Encrypt выпущен для обоих имён; автоматическое продление проверено.
+- HTTP перенаправляется на HTTPS.
+- Из-за подтверждённой несовместимости TLS 1.3 с российскими ТСПУ на сервере временно оставлен TLS 1.2 и включён HTTP/2. TLS 1.0 и TLS 1.1 не включались.
+- Перед возвратом TLS 1.3 обязательно проверить HTTPS из российской сети и через несколько внешних контрольных точек.
+- Резервные копии изменённых конфигураций сохранены на сервере с суффиксом `bak-assembly-20260929-0805`.
 
 ## После подключения домена
 
