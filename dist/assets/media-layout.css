@@ -23,6 +23,11 @@
   border-color: rgba(255, 255, 255, .2);
 }
 
+.network-card:hover,
+.resident-card:hover {
+  transform: none;
+}
+
 .network-visual,
 .network-visual.artwork,
 .network-visual.meetya,
