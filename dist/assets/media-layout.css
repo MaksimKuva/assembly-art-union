@@ -1,0 +1,228 @@
+/* Shared image rhythm for the community and event pages. */
+.network-grid,
+.network-grid.participants,
+.network-grid.residents {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  border: 0;
+}
+
+.network-card,
+.network-card.has-visual,
+.network-card.resident-card {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  gap: 0;
+  justify-content: flex-start;
+  border: 1px solid var(--line);
+}
+
+.network-card.participant-card,
+.network-card.resident-card {
+  border-color: rgba(255, 255, 255, .2);
+}
+
+.network-visual,
+.network-visual.artwork,
+.network-visual.meetya,
+.resident-photo {
+  position: relative;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.network-visual img,
+.network-visual.meetya img,
+.resident-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* The supplied MeetЯ image has a blank lower part: keep the real photograph. */
+.network-visual.meetya img {
+  height: 170.51%;
+  object-position: 70% top;
+}
+
+.network-visual.artwork {
+  background: #171717;
+}
+
+.network-visual.artwork img {
+  inset: 24px;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  object-fit: contain;
+  object-position: center;
+}
+
+.network-visual.brand-visual {
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.network-visual.brand-visual img {
+  position: static;
+  width: min(100%, 240px);
+  height: auto;
+  object-fit: contain;
+}
+
+.participant-card .brand-visual {
+  background: #171717;
+}
+
+.brand-sign {
+  max-width: 100%;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.04em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.network-copy,
+.resident-copy {
+  flex: 1;
+  min-height: 220px;
+  padding: 28px;
+}
+
+.network-copy .network-mark,
+.resident-copy .network-mark {
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
+.network-copy .network-index,
+.resident-copy .participant-role {
+  display: block;
+  margin: 0 0 20px;
+  line-height: 1.4;
+}
+
+.network-mark.capital-mark {
+  color: #ef3124;
+}
+
+.network-copy .network-caption {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.founder-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.founder-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* Posters keep their full content inside matching frames on both pages. */
+.event-image,
+.event-media {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  padding: 24px;
+  align-self: start;
+  background: #d8d4cc;
+  overflow: hidden;
+}
+
+.event-image img,
+.event-image.poster img,
+.event-media img,
+.event-media.poster img {
+  position: absolute;
+  inset: 24px;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  object-fit: contain;
+  object-position: center;
+  box-shadow: none;
+}
+
+.event-copy {
+  min-width: 0;
+}
+
+.event-media {
+  max-width: 520px;
+  justify-self: center;
+}
+
+@media (max-width: 980px) {
+  .network-grid,
+  .network-grid.participants,
+  .network-grid.residents {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .events-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .event-copy h3 {
+    font-size: clamp(2rem, 4.1vw, 4.6rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .network-grid,
+  .network-grid.participants,
+  .network-grid.residents {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .network-copy,
+  .resident-copy {
+    min-height: 0;
+    padding: 25px;
+  }
+
+  .events-list {
+    grid-template-columns: 1fr;
+  }
+
+  .event-image,
+  .event-media {
+    padding: 18px;
+  }
+
+  .event-image img,
+  .event-image.poster img,
+  .event-media img,
+  .event-media.poster img {
+    inset: 18px;
+    width: calc(100% - 36px);
+    height: calc(100% - 36px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .network-visual img {
+    transition: none;
+  }
+}
