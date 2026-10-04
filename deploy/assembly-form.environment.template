@@ -1,0 +1,8 @@
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USERNAME=artunion.promo.team@gmail.com
+SMTP_APP_PASSWORD=replace-with-16-character-google-app-password
+FORM_RECIPIENT=artunion.promo.team@gmail.com
+FORM_ALLOWED_ORIGINS=https://assembly-art-union.ru,https://www.assembly-art-union.ru
+FORM_BIND_HOST=127.0.0.1
+FORM_BIND_PORT=8787
