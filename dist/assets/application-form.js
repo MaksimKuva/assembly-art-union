@@ -19,7 +19,9 @@
             <input type="hidden" name="event_title" id="event-title">
             <input type="hidden" name="event_date" id="event-date">
             <input type="hidden" name="event_place" id="event-place">
+            <input type="hidden" name="form_started_at" id="form-started-at">
             <input type="hidden" name="utm_source" data-attribution><input type="hidden" name="utm_medium" data-attribution><input type="hidden" name="utm_campaign" data-attribution><input type="hidden" name="utm_content" data-attribution><input type="hidden" name="utm_term" data-attribution><input type="hidden" name="yclid" data-attribution><input type="hidden" name="gclid" data-attribution><input type="hidden" name="fbclid" data-attribution><input type="hidden" name="vk_click_id" data-attribution><input type="hidden" name="attribution_landing_path" data-attribution><input type="hidden" name="attribution_referrer_origin" data-attribution><input type="hidden" name="attribution_captured_at" data-attribution>
+            <label class="hp-field" aria-hidden="true">Не заполняйте это поле<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             <fieldset class="step active" data-step="1">
               <legend>Как к вам обращаться?</legend>
               <label class="event-selector" id="event-selector"><span>Выбранное событие *</span><select id="event-select" name="registration_event">${eventOptions}</select><small id="event-summary"></small></label>
@@ -28,9 +30,9 @@
             <fieldset class="step" data-step="2"><legend>Кого или что вы хотите найти?</legend><span class="group-label">Можно выбрать несколько вариантов</span><div class="choices" role="group" aria-label="Тип запроса"><label class="choice"><input type="checkbox" name="request" value="collaboration"><span>Коллаборацию / совместный проект</span></label><label class="choice"><input type="checkbox" name="request" value="partnership"><span>Партнёрство</span></label><label class="choice"><input type="checkbox" name="request" value="specialist"><span>Специалиста / подрядчика</span></label><label class="choice"><input type="checkbox" name="request" value="team"><span>Единомышленника / команду</span></label><label class="choice"><input type="checkbox" name="request" value="mentor"><span>Наставника / консультанта</span></label></div><label class="field free"><span>Сформулируйте свой запрос своими словами</span><textarea name="request_details" placeholder="Например: ищу партнёра для запуска проекта или эксперта в конкретной сфере"></textarea></label></fieldset>
             <fieldset class="step" data-step="3"><legend>Что вам сейчас особенно интересно?</legend><span class="group-label">Можно выбрать несколько сфер</span><div class="choices" role="group" aria-label="Интересующие сферы"><label class="choice"><input type="checkbox" name="interest" value="art"><span>Искусство</span></label><label class="choice"><input type="checkbox" name="interest" value="business"><span>Бизнес-партнёрства</span></label><label class="choice"><input type="checkbox" name="interest" value="fashion"><span>Мода</span></label><label class="choice"><input type="checkbox" name="interest" value="music"><span>Музыка</span></label><label class="choice"><input type="checkbox" name="interest" value="tech"><span>ИИ и IT-технологии</span></label><label class="choice"><input type="checkbox" name="interest" value="investment"><span>Инвестиции и капитал</span></label><label class="choice"><input type="checkbox" name="interest" value="wellness"><span>Красота и здоровье</span></label></div><label class="field free"><span>Другое направление — своими словами</span><input type="text" name="interest_other"></label></fieldset>
             <fieldset class="step" data-step="4"><legend>Как Ассамблея может вам помочь?</legend><span class="group-label">Можно выбрать несколько вариантов</span><div class="choices" role="group" aria-label="Формат содействия"><label class="choice"><input type="checkbox" name="help" value="introduction"><span>Познакомить с нужными людьми</span></label><label class="choice"><input type="checkbox" name="help" value="announce"><span>Анонсировать запрос</span></label><label class="choice"><input type="checkbox" name="help" value="feedback"><span>Дать обратную связь по идее</span></label></div><label class="field free"><span>Расскажите подробнее</span><textarea name="help_details"></textarea></label></fieldset>
-            <fieldset class="step" data-step="5"><legend>Как вам удобнее продолжить знакомство?</legend><div class="choices" role="radiogroup" aria-label="Предпочтительный следующий шаг"><label class="choice"><input type="radio" name="next_step" value="personal-invitation" required><span>Получить личное приглашение на встречу</span></label><label class="choice"><input type="radio" name="next_step" value="one-to-one"><span>Обсудить участие один на один</span></label><label class="choice"><input type="radio" name="next_step" value="announcements"><span>Получать анонсы будущих событий</span></label></div><label class="consent"><input type="checkbox" name="consent" required><span>Я ознакомлен(а) с <a href="${policyUrl}" target="_blank" rel="noopener noreferrer">Политикой обработки персональных данных</a> и даю отдельное <a href="${consentUrl}" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> для рассмотрения заявки и связи со мной. *</span></label><p class="preview-note">Сейчас форма работает в режиме предпросмотра: ответы не передаются оператору, на почту или в CRM. После подключения сервера выбранное событие и ответы будут отправляться вместе.</p></fieldset>
+            <fieldset class="step" data-step="5"><legend>Как вам удобнее продолжить знакомство?</legend><div class="choices" role="radiogroup" aria-label="Предпочтительный следующий шаг"><label class="choice"><input type="radio" name="next_step" value="personal-invitation" required><span>Получить личное приглашение на встречу</span></label><label class="choice"><input type="radio" name="next_step" value="one-to-one"><span>Обсудить участие один на один</span></label><label class="choice"><input type="radio" name="next_step" value="announcements"><span>Получать анонсы будущих событий</span></label></div><label class="consent"><input type="checkbox" name="consent" required><span>Я ознакомлен(а) с <a href="${policyUrl}" target="_blank" rel="noopener noreferrer">Политикой обработки персональных данных</a> и даю отдельное <a href="${consentUrl}" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> для рассмотрения заявки и связи со мной. *</span></label><p class="preview-note">После отправки выбранное событие и все ответы поступят команде Ассамблеи на почту проекта. Данные не публикуются и не передаются в CRM.</p></fieldset>
             <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
-            <div class="dialog-actions"><button class="button ghost" id="back-button" type="button" hidden>Назад</button><button class="button" id="next-button" type="button">Далее <span aria-hidden="true">→</span></button><button class="button" id="submit-button" type="submit" hidden>Завершить <span aria-hidden="true">→</span></button></div>
+            <div class="dialog-actions"><button class="button ghost" id="back-button" type="button" hidden>Назад</button><button class="button" id="next-button" type="button">Далее <span aria-hidden="true">→</span></button><button class="button" id="submit-button" type="submit" hidden>Отправить заявку <span aria-hidden="true">→</span></button></div>
           </form>
         </div>
         <section class="dialog-success" id="dialog-success" role="status" tabindex="-1"><div class="dialog-progress">Анкета заполнена</div><h2 id="success-title">Спасибо. Запрос собран.</h2><p id="success-copy"></p><button class="button dark" type="button" data-close-form>Вернуться на сайт</button></section>
@@ -100,6 +102,7 @@
     eventSelect.required=formMode==='guest';
     if(formMode==='guest')setEvent(eventId);
     else{asideTitle.textContent='Ваш запрос — начало разговора.';asideCopy.textContent='Расскажите о себе и о том, что вы хотите найти внутри среды Ассамблеи.'}
+    document.getElementById('form-started-at').value=String(Date.now());
     applyAttribution();
     if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
     document.body.classList.add('dialog-open');
@@ -117,23 +120,51 @@
   nextButton.addEventListener('click',()=>{if(validateCurrentStep()){currentStep+=1;renderStep()}});
   backButton.addEventListener('click',()=>{currentStep=Math.max(0,currentStep-1);renderStep()});
 
-  async function submitApplication(payload){return {ok:true,preview:true,payload}}
+  async function submitApplication(payload){
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),18000);
+    try{
+      const response=await fetch('/api/applications',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        credentials:'same-origin',
+        body:JSON.stringify(payload),
+        signal:controller.signal
+      });
+      let result={};
+      try{result=await response.json()}catch(parseError){result={}}
+      if(!response.ok||!result.ok)throw new Error(result.error||'Не удалось отправить заявку. Попробуйте ещё раз или напишите на почту проекта.');
+      return result;
+    }finally{clearTimeout(timeout)}
+  }
   form.addEventListener('submit',async event=>{
     event.preventDefault();
     if(!validateCurrentStep())return;
     const data=new FormData(form);
     const payload={};
     for(const [key,value] of data.entries()){if(key in payload)payload[key]=[].concat(payload[key],value);else payload[key]=value}
-    const result=await submitApplication(payload);
-    if(result.ok){
+    const originalSubmit=submitButton.innerHTML;
+    submitButton.disabled=true;
+    submitButton.innerHTML='Отправляем…';
+    form.setAttribute('aria-busy','true');
+    try{
+      const result=await submitApplication(payload);
+      if(result.ok){
       const selected=formMode==='guest'?getEvent(payload.event_id):null;
-      document.getElementById('success-title').textContent=formMode==='guest'?'Регистрация заполнена.':'Спасибо. Запрос собран.';
+      document.getElementById('success-title').textContent=formMode==='guest'?'Регистрация отправлена.':'Спасибо. Заявка отправлена.';
       const selectedWhen=selected?[selected.date,selected.time].filter(Boolean).join(' · '):'';
-      document.getElementById('success-copy').textContent=selected?`Вы выбрали «${selected.title}». ${selectedWhen}. Сейчас это предпросмотр: ответы пока не отправлены.`:'Сейчас это предпросмотр: ответы пока не отправлены. После подключения сервера команда Ассамблеи получит вашу заявку.';
+      document.getElementById('success-copy').textContent=selected?`Команда Ассамблеи получила вашу регистрацию на «${selected.title}». ${selectedWhen}. Мы свяжемся с вами по указанным контактам.`:'Команда Ассамблеи получила вашу заявку и свяжется с вами по указанным контактам.';
       formView.hidden=true;
       successView.classList.add('show');
       progress.innerHTML=`<b>${formTitle()}</b> · готово`;
       successView.focus();
+      }
+    }catch(submitError){
+      error.textContent=submitError.name==='AbortError'?'Сервер не ответил вовремя. Попробуйте отправить заявку ещё раз.':submitError.message;
+    }finally{
+      submitButton.disabled=false;
+      submitButton.innerHTML=originalSubmit;
+      form.removeAttribute('aria-busy');
     }
   });
 

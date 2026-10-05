@@ -236,8 +236,9 @@ class ApplicationHandler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _client_key(self) -> str:
-        forwarded = self.headers.get("X-Forwarded-For", "")
-        return (forwarded.split(",", 1)[0].strip() or self.client_address[0])[:100]
+        # Nginx replaces X-Real-IP with the connected client's address.
+        # The first X-Forwarded-For value can be supplied by a caller.
+        return (self.headers.get("X-Real-IP", "").strip() or self.client_address[0])[:100]
 
     def _origin_allowed(self) -> bool:
         origin = self.headers.get("Origin", "")

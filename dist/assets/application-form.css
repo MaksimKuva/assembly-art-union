@@ -1,4 +1,5 @@
 body.dialog-open{overflow:hidden}
+.application-dialog [hidden]{display:none!important}
 .application-dialog{border:0;padding:0;background:transparent;color:inherit;width:min(1040px,calc(100% - 36px));max-height:calc(100svh - 36px);overflow:visible}
 .application-dialog::backdrop{background:rgba(5,5,5,.82);backdrop-filter:blur(8px)}
 .application-dialog .dialog-card{background:var(--paper,#f4f0e9);max-height:calc(100svh - 36px);overflow:auto;box-shadow:0 26px 80px rgba(0,0,0,.42)}
@@ -35,6 +36,7 @@ body.dialog-open{overflow:hidden}
 .application-dialog .consent input{margin-top:4px;accent-color:var(--red,#f12c35);width:18px;height:18px;flex:0 0 auto}
 .application-dialog .consent a{text-decoration:underline;text-underline-offset:3px;color:var(--ink,#0b0b0b)}
 .application-dialog .form-error{min-height:24px;color:#b51620;font-size:.82rem;margin:22px 0 0}
+.application-dialog .hp-field{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
 .application-dialog .dialog-actions{margin-top:auto;padding-top:30px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .application-dialog .button{border:0;cursor:pointer;font:inherit;border-radius:999px;display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:48px;padding:0 20px;background:var(--red,#f12c35);color:var(--ink,#0b0b0b);font-weight:700;text-decoration:none}
 .application-dialog .button.ghost{background:transparent;border:1px solid #aaa39a}
