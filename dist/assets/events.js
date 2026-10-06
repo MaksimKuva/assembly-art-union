@@ -5,7 +5,7 @@
     Object.freeze({
       id:'assembly-4-architectonics',
       title:'Ассамблея 4. Архитектоника связей',
-      date:'Дата уточняется',
+      date:'12 декабря 2026',
       time:'',
       place:'Москва · Archiloft',
       registrationOpen:true
