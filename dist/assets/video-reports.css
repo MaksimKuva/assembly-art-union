@@ -26,7 +26,8 @@
 
 .video-reports-grid {
   display: grid;
-  grid-template-columns: minmax(0, 16fr) minmax(0, 5fr);
+  /* The 16:9 and 9:16 frames reach the same height at this width ratio. */
+  grid-template-columns: minmax(0, 255fr) minmax(0, 81fr);
   align-items: start;
   gap: 24px;
 }
