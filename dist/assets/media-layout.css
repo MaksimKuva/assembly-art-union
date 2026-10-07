@@ -128,6 +128,10 @@
   font-weight: 700;
 }
 
+.participant-card .network-copy .network-caption {
+  color: rgba(255, 255, 255, .82);
+}
+
 .founder-portrait {
   width: 100%;
   aspect-ratio: 4 / 5;
