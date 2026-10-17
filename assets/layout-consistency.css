@@ -1,0 +1,193 @@
+/* Keep navigation and padded content on the same page guides. */
+.nav-inner,
+.legal-layout {
+  width: 100%;
+  max-width: calc(var(--max) + var(--pad) + var(--pad));
+  margin-inline: auto;
+}
+
+.hero-grid {
+  width: min(var(--max), 100%);
+}
+
+.people-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.person {
+  min-width: 0;
+}
+
+.person h3 {
+  overflow-wrap: anywhere;
+}
+
+.nav-inner > *,
+.footer-inner > *,
+.legal-content,
+.network-copy,
+.resident-copy {
+  min-width: 0;
+}
+
+.wordmark {
+  flex-shrink: 0;
+}
+
+.nav-links .button {
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.footer-links a,
+.operator a,
+.fine a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+footer .footer {
+  align-items: baseline;
+  row-gap: 18px;
+}
+
+.legal-hero h1,
+.legal-content,
+.application-dialog .step legend {
+  overflow-wrap: anywhere;
+}
+
+section[id],
+article[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Flexible fallback also keeps card links on the same bottom line. */
+.network-copy,
+.resident-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.network-copy .card-links,
+.resident-copy .card-links {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.application-dialog .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.application-dialog .field > input,
+.application-dialog .field > textarea {
+  margin-top: auto;
+}
+
+/* Shared tracks adapt to the longest text in each row without fixed heights. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 701px) {
+    .people-grid > .person {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 3;
+      row-gap: 0;
+    }
+    .person > div:not(.person-mark) { display: contents; }
+    .person > .person-mark { grid-row: 1; }
+    .person h3 { grid-row: 2; }
+    .person p { grid-row: 3; }
+
+    .network-grid > .network-card.has-visual {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 6;
+      row-gap: 0;
+    }
+
+    .network-card.has-visual > .network-visual {
+      grid-row: 1;
+    }
+
+    .network-card.has-visual > .network-copy {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: 2 / span 5;
+      row-gap: 0;
+      min-height: 0;
+    }
+
+    .network-copy > .network-index { grid-row: 1; }
+    .network-copy > .network-mark { grid-row: 2; }
+    .network-copy > .network-caption { grid-row: 3; }
+    .network-copy > p:not(.network-caption) { grid-row: 4; }
+    .network-copy > .card-links { grid-row: 5; margin-top: 0; }
+
+    .network-grid.residents > .resident-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 5;
+      row-gap: 0;
+    }
+
+    .resident-card > .resident-photo { grid-row: 1; }
+    .resident-card > .resident-copy {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: 2 / span 4;
+      row-gap: 0;
+      min-height: 0;
+    }
+    .resident-copy > .participant-role { grid-row: 1; }
+    .resident-copy > .network-mark { grid-row: 2; }
+    .resident-copy > p { grid-row: 3; }
+    .resident-copy > .card-links { grid-row: 4; margin-top: 0; }
+
+    .events-list > .event-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 6;
+      row-gap: 0;
+    }
+    .event-card > .event-image { grid-row: 1; }
+    .event-card > .event-copy {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: 2 / span 5;
+      row-gap: 0;
+    }
+    .event-card > .event-copy > div:first-child { display: contents; }
+    .event-card .section-label { grid-row: 1; }
+    .event-card h3 { grid-row: 2; }
+    .event-card .event-copy p { grid-row: 3; }
+    .event-card .event-meta { grid-row: 4; }
+    .event-card .event-actions { grid-row: 5; }
+  }
+}
+
+@media (max-width: 760px) {
+  .legal-hero h1 {
+    font-size: clamp(2.45rem, 11vw, 3.2rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .people-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .wordmark {
+    font-size: 1rem;
+  }
+  .application-dialog .dialog-actions .button {
+    justify-content: center;
+  }
+}
